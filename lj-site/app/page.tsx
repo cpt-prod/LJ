@@ -22,6 +22,14 @@ export default function HomePage() {
           <Link href="/videos" className="btn btn-primary">
             Watch the videos
           </Link>
+          <a
+            href="https://www.youtube.com/@LJ_THE_DJ"
+            target="_blank"
+            rel="noreferrer"
+            className="btn btn-ghost"
+          >
+            YouTube channel
+          </a>
           <Link href="/contact" className="btn btn-ghost">
             Get in touch
           </Link>

@@ -34,17 +34,38 @@ export default function Footer() {
           <h4>Find LJ</h4>
           <ul>
             <li>
-              <a href="https://youtube.com" target="_blank" rel="noreferrer">
-                YouTube
+              <a
+                href="https://www.youtube.com/@LJ_THE_DJ"
+                target="_blank"
+                rel="noreferrer"
+              >
+                YouTube — @LJ_THE_DJ
               </a>
             </li>
             <li>
-              <a href="https://soundcloud.com" target="_blank" rel="noreferrer">
+              <a
+                href="https://www.youtube.com/@Ljthedjinthemix"
+                target="_blank"
+                rel="noreferrer"
+              >
+                YouTube — @Ljthedjinthemix
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://soundcloud.com"
+                target="_blank"
+                rel="noreferrer"
+              >
                 SoundCloud
               </a>
             </li>
             <li>
-              <a href="https://instagram.com" target="_blank" rel="noreferrer">
+              <a
+                href="https://instagram.com"
+                target="_blank"
+                rel="noreferrer"
+              >
                 Instagram
               </a>
             </li>
