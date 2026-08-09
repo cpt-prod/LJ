@@ -44,6 +44,36 @@ Three source types are supported via the `kind` discriminator:
 When migrating to a real backend, swap the import in
 [`app/api/videos/route.ts`](./app/api/videos/route.ts) for a query.
 
+## Bulk-import from YouTube channels
+
+To populate `lib/data.ts` with every video from one or more YouTube
+channels, use the helper script:
+
+1. **Get an API key.** Open
+   [Google Cloud Console](https://console.cloud.google.com), create a
+   project (or reuse one), enable **YouTube Data API v3**, then create an
+   API key.
+2. **Add it to `.env.local`** at the project root:
+   ```
+   YOUTUBE_API_KEY=AIza...
+   ```
+   `.env.local` is gitignored — your key stays local.
+3. **Edit the `HANDLES` array** in
+   [`scripts/fetch-channels.mjs`](./scripts/fetch-channels.mjs) to list
+   the `@handles` you want (currently `@LJ_THE_DJ` and
+   `@Ljthedjinthemix`).
+4. **Run the script:**
+   ```
+   node scripts/fetch-channels.mjs
+   ```
+5. **Copy the printed `videos: Video[]` block** into
+   [`lib/data.ts`](./lib/data.ts), replacing the existing seed array.
+
+The script resolves handles → channel IDs, pulls each channel's uploads
+playlist (capped at 100 videos per channel), guesses a category from the
+title (`dj`, `music`, `community`, `other`), and prints a TypeScript-ready
+array. Re-run anytime you want to refresh.
+
 ## License
 
 MIT — see [LICENSE](./LICENSE).
